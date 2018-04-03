@@ -18,7 +18,7 @@ DIRS += $(BACKUP_DIR)
 .PHONY : backup
 backup : $(BACKUP_FILES)
 $(BACKUP_DIR)/.% : $(PREFIX)/.% | $(BACKUP_DIR)
-	cp $< $@
+	cp -r $< $@
 else
 .PHONY : install
 install : $(DOT_FILES)
