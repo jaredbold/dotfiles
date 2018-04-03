@@ -1,0 +1,47 @@
+! Xresources anc Xdefaults (symlinked)
+! -------------------------------------
+! UI and other
+xterm*termName:                    xterm-color
+xterm*vt100*geometry:              100x50
+xterm*allowTitleOps:               true
+XTerm*loginShell:                  true
+XTerm*visualBell:                  false
+XTerm*saveLines:                   1000
+XTerm*allowSendEvents:             false
+XTerm*sessionMgt:                  false
+XTerm*rightScrollBar:              true
+
+! Font config
+XTerm*faceName:                    Monospace
+XTerm*faceSize:                    10
+
+! Double and triple click highlighting
+XTerm*VT100.cutNewLine:            false
+XTerm*VT100.cutToBeginningOfLine:  true
+XTerm*VT100.charClass:             33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
+
+! Colors
+XTerm*foreground:                  gray50
+XTerm*background:                  gray10
+XTerm*borderColor:                 white
+XTerm*scrollColor:                 black
+XTerm*color0:                      #000d18
+XTerm*color1:                      #e89393
+XTerm*color2:                      #9ece9e
+XTerm*color3:                      #f0dfaf
+XTerm*color4:                      #8cd0d3
+XTerm*color5:                      #c0bed1
+XTerm*color6:                      #dfaf8f
+XTerm*color7:                      #efefef
+XTerm*color8:                      #000d18
+XTerm*color9:                      #e89393
+XTerm*color10:                     #9ece9e
+XTerm*color11:                     #f0dfaf
+XTerm*color12:                     #8cd0d3
+XTerm*color13:                     #c0bed1
+XTerm*color14:                     #dfaf8f
+XTerm*color15:                     #efefef
+XTerm*colorBD:                     #ffcfaf
+XTerm*colorIT:                     #ccdc90
+XTerm*colorUL:                     #80d4aa
+XTerm*cursorColor:                 #8faf9f
