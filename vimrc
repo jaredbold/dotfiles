@@ -96,7 +96,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%f
 
-let g:syntastic_cpp_checkers = ['cpplint', 'gcc']
+let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
 "let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
 let g:syntastic_cpp_remove_include_errors = 1
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -DUSE_DTF_SEQIDS -DSIM_HAS_ISU -D_REDUCED_TFAC_VERSION_  -DP9XLATEONLY -DRTPG_2'
@@ -105,12 +105,13 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_include_dirs = ['/afs/awd.austin.ibm.com/proj/p3/cte/tools/fusion/vol1/releases/R80_0-noarch/src']
 
 let g:syntastic_cpp_cppcheck_exec = '/afs/awd/projects/eclipz/c14/usr/pbunch/p9nd2/usr/bin/cppcheck'
-let g:syntastic_cpp_cppcheck_args='--language=c++ --std=c++11 -i*'
+let g:syntastic_cpp_cppcheck_args='--language=c++ -j `nproc` --enable=warning,style,performance,information,missingInclude --std=c++11'
 
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_cpplint_args='--extension=C,h,T,c,H --filter=-build/include,-build/header_guard,-runtime/references --linelength=160'
 
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_sort_aggregated_errors = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
