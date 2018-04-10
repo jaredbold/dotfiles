@@ -859,7 +859,7 @@ class Tr1HashtableIterator(Iterator):
 
 class StdHashtableIterator(Iterator):
     def __init__(self, hash):
-        self.node = hash['_M_before_begin']['_M_nxt']
+        self.node = hash['_M_bbegin']['_M_node']['_M_nxt']
         self.node_type = find_type(hash.type, '__node_type').pointer()
 
     def __iter__(self):
@@ -870,7 +870,7 @@ class StdHashtableIterator(Iterator):
             raise StopIteration
         elt = self.node.cast(self.node_type).dereference()
         self.node = elt['_M_nxt']
-        valptr = elt['_M_storage'].address
+        valptr = elt['_M_v'].address
         valptr = valptr.cast(elt.type.template_argument(0).pointer())
         return valptr.dereference()
 
