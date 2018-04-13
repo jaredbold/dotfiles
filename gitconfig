@@ -20,4 +20,4 @@
 [include]
   path = ~/.gitconfig.user
 [core]
-	excludesfile = $HOME/.gitignore
+	excludesfile = ~/.gitignore
