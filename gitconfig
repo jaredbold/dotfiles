@@ -16,8 +16,9 @@
 
 [push]
 	default = simple
+
+[core]
+	excludesfile = ~/.gitignore
   
 [include]
   path = ~/.gitconfig.user
-[core]
-	excludesfile = ~/.gitignore
