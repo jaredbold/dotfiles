@@ -24,7 +24,7 @@ else
 install : $(DOT_FILES)
 $(PREFIX)/.% : $(PWD)/% | $(PREFIX)
 	rm -rf $@
-	ln -sT $< $@
+	ln -s $< $@
 endif
 
 .PHONY : clean
