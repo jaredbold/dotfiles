@@ -11,7 +11,7 @@
   last-tag = "describe --tag --match "
   su = "submodule update --init"
   top = "rev-parse --show-toplevel"
-  lbranch = "!for k in `git branch | perl -pe s/^..//`; do echo -e `git show --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset\" $k -- | head -n 1`\\\\t$k; done | sort -r"
+  lbranch = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
   rbi = "rebase -i"
 
 [push]
@@ -22,3 +22,5 @@
   
 [include]
   path = ~/.gitconfig.user
+[help]
+	autocorrect = 1
