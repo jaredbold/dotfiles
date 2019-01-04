@@ -1,3 +1,6 @@
+# Save history between runs
+set history save on
+
 # Add pretty printers
 set print static off
 

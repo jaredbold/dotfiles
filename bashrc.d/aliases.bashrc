@@ -20,6 +20,8 @@ alias :q='exit' # In case you are to used to working in vim
 alias tf='tail -f'    # Continues to dump file to stdout as it is written 
 alias nw='(xterm &)'  # Opens a new terminal window
 
+alias cdg='cd `git top`'
+
 ################################################################################
 # Vim #
 ################################################################################
