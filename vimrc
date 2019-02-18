@@ -99,10 +99,10 @@ set statusline+=%f
 let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
 "let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
 let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result -DUSE_DTF_SEQIDS -DSIM_HAS_ISU -D_REDUCED_TFAC_VERSION_  -DP9XLATEONLY -DRTPG_2'
+let g:syntastic_cpp_compiler_options = '-O0 -std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result -DUSE_DTF_SEQIDS -DSIM_HAS_ISU -D_REDUCED_TFAC_VERSION_  -DP9XLATEONLY -DRTPG_2'
 let g:syntastic_cpp_config_file = ".rtx_syntastic_includes"
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_include_dirs = ['/afs/awd.austin.ibm.com/proj/p3/cte/tools/fusion/vol1/releases/R80_0-noarch/src']
+let g:syntastic_cpp_include_dirs = ['/afs/apd/projects/fusion/releases/prod/R82_0/src']
 
 let g:syntastic_cpp_cppcheck_exec = '/afs/awd/projects/eclipz/c14/usr/pbunch/p9nd2/usr/bin/cppcheck'
 let g:syntastic_cpp_cppcheck_args='--language=c++ -j `nproc` --enable=warning,style,performance,information,missingInclude --std=c++11'
