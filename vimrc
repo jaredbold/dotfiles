@@ -134,8 +134,8 @@ let g:ctrlp_max_files=0
 
 " Load other vim scripts
 let vimrc_dir = "~/.vimrc.d"
-if isdirectory(vimrc_dir)
-  for f in split(glob('~/.vimrc.d/*.vim')), '\n')
-    exe 'source' f
-  endfor
-endif
+let g:loaded_files = ['none']
+for f in split(glob('~/.vimrc.d/*.vim'), '\n')
+  call add(g:loaded_files, f)
+  exe 'source' f
+endfor
