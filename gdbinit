@@ -4,6 +4,9 @@ set history save on
 # Add pretty printers
 set print static off
 
+# set record to unlimited
+set record instruction-history-size unlimited
+
 python
 import sys
 import os

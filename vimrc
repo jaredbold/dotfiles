@@ -96,19 +96,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%f
 
-let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
-"let g:syntastic_cpp_checkers = ['gcc', 'cpplint']
+let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_compiler_options = '-O0 -std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result -DUSE_DTF_SEQIDS -DSIM_HAS_ISU -D_REDUCED_TFAC_VERSION_  -DP9XLATEONLY -DRTPG_2'
-let g:syntastic_cpp_config_file = ".rtx_syntastic_includes"
+let g:syntastic_cpp_compiler_options = '-O0 -std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result'
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_include_dirs = ['/afs/apd/projects/fusion/releases/prod/R82_0/src']
-
-let g:syntastic_cpp_cppcheck_exec = '/afs/awd/projects/eclipz/c14/usr/pbunch/p9nd2/usr/bin/cppcheck'
-let g:syntastic_cpp_cppcheck_args='--language=c++ -j `nproc` --enable=warning,style,performance,information,missingInclude --std=c++11'
-
-let g:syntastic_cpp_cpplint_exec = 'cpplint'
-let g:syntastic_cpp_cpplint_args='--extension=C,h,T,c,H --filter=-build/include,-build/header_guard,-runtime/references --linelength=160'
 
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_sort_aggregated_errors = 0
@@ -140,3 +131,11 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 let g:ctrlp_max_files=0
+
+" Load other vim scripts
+let vimrc_dir = "~/.vimrc.d"
+if isdirectory(vimrc_dir)
+  for f in split(glob('~/.vimrc.d/*.vim')), '\n')
+    exe 'source' f
+  endfor
+endif
