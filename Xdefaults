@@ -13,7 +13,7 @@ XTerm*rightScrollBar:              true
 
 ! Font config
 XTerm*faceName:                    Monospace
-XTerm*faceSize:                    10
+XTerm*faceSize:                    14
 
 ! Double and triple click highlighting
 XTerm*VT100.cutNewLine:            false
