@@ -1,7 +1,7 @@
 ! Xresources anc Xdefaults (symlinked)
 ! -------------------------------------
 ! UI and other
-xterm*termName:                    xterm-color
+xterm*termName:                    xterm-256color
 xterm*vt100*geometry:              100x50
 xterm*allowTitleOps:               true
 XTerm*loginShell:                  true
