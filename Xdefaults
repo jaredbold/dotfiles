@@ -13,14 +13,14 @@ XTerm*rightScrollBar:              true
 
 ! Font config
 XTerm*faceName:                    Monospace
-XTerm*faceSize:                    14
+XTerm*faceSize:                    12
 
 ! Double and triple click highlighting
 XTerm*VT100.cutNewLine:            false
 XTerm*VT100.cutToBeginningOfLine:  true
 XTerm*VT100.charClass:             33:48,35:48,37:48,42:48,45-47:48,64:48,95:48,126:48
 
-! Colors
+! Colors - default (overriden by base16-shell if installed)
 XTerm*foreground:                  gray50
 XTerm*background:                  gray10
 XTerm*borderColor:                 white
