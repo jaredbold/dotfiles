@@ -7,6 +7,17 @@ set print static off
 # set record to unlimited
 set record instruction-history-size unlimited
 
+# disable autoload checking
+set auto-load safe-path /
+
+set print pretty off
+set print object on
+set print static-members off
+set print vtbl off
+set print demangle on
+set demangle-style gnu-v3
+
+# No longer needed if using a newer version of gcc/gdb
 python
 import sys
 import os
