@@ -98,7 +98,7 @@ set statusline+=%f
 
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_compiler_options = '-O0 -std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result'
+let g:syntastic_cpp_compiler_options = '-O1 -std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result'
 let g:syntastic_cpp_check_header = 1
 
 let g:syntastic_aggregate_errors = 1
@@ -144,3 +144,7 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" template settings
+let g:templates_directory="~/.vim/templates"
+let g:templates_search_height=0
