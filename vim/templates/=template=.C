@@ -6,11 +6,10 @@
  *            All Rights Reserved.
  */
 
-// C++ Includes
-
-// Fusion Includes
-
-// RTX Includes
+// Primary Include
 #include "%CLASS%.h"
+// C++ Includes
+// Fusion Includes
+// RTX Includes
 
 %HERE%

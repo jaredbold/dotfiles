@@ -8,12 +8,11 @@
 
 #ifndef %CLASS%_T
 #define %CLASS%_T
-// C++ Includes
-
-// Fusion Includes
-
-// RTX Includes
+// Primary Include
 #include "%CLASS%.h"
+// C++ Includes
+// Fusion Includes
+// RTX Includes
 
 %HERE%
 

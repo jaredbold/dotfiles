@@ -78,6 +78,8 @@ map <leader>ws :%s/\s\+$//<CR>:noh<CR>
 map <leader>cs :%s/,\(\S\)/, \1/g<CR>:noh<CR>
 map <leader>{s :%s/\(\S\){/\1 {/g<CR>:noh<CR>
 
+map <leader>std :%s/\(\(#include.*\)\\|\(\<std::\)\)\@<!\<\(ostream\\|stringstream\\|deque\\|unique_ptr\\|shared_ptr\\|string\\|vector\\|unordered_set\\|unordered_map\\|u\?int\d\+_t\)\>/std::\4/g<CR>:noh<CR>
+
 set cursorline
 " Syntax highlight template files
 autocmd BufRead,BufNewFile *.T set filetype=cpp

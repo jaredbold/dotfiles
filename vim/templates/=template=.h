@@ -9,10 +9,10 @@
 #ifndef %CLASS%_h
 #define %CLASS%_h
 // C++ Includes
-
 // Fusion Includes
-
 // RTX Includes
+
+// Forward Declarations
 
 %HERE%
 
