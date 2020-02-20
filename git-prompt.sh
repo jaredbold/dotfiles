@@ -465,6 +465,12 @@ __git_ps1 ()
 	local u=""
 	local c=""
 	local p=""
+  local timeout_short=""
+  local timeout_long=""
+  if command -v timeout; then
+    timeout_short="$timeout 2s"
+    timeout_long="$timeout 4s"
+  fi
 
 	if [ "true" = "$inside_gitdir" ]; then
 		if [ "true" = "$bare_repo" ]; then
@@ -477,7 +483,7 @@ __git_ps1 ()
 		   [ "$(git config --bool bash.showDirtyState)" != "false" ]
 		then
       local skip="no"
-      timeout 4s git diff --no-ext-diff --quiet || if [ "$?" == "124" ]; then { nohup  git diff --no-ext-diff --quiet >/dev/null 2>&1 & } ;  skip="yes"; w="~"; else w="*"; fi
+      $timeout_long git diff --no-ext-diff --quiet || if [ "$?" == "124" ]; then { nohup  git diff --no-ext-diff --quiet >/dev/null 2>&1 & } ;  skip="yes"; w="~"; else w="*"; fi
       if [ "no" == "$skip" ]; then
         git diff --no-ext-diff --cached --quiet || i="+"
       fi
@@ -494,7 +500,7 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWUNTRACKEDFILES-}" ] &&
 		   [ "$(git config --bool bash.showUntrackedFiles)" != "false" ] &&
        [ "no" == "$skip" ] &&
-		   timeout 2s git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' >/dev/null 2>/dev/null
+		   $timeout_short git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' >/dev/null 2>/dev/null
 		then
 			u="%${ZSH_VERSION+%}"
 		fi
