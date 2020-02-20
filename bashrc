@@ -35,6 +35,7 @@ export LESS="-Ri -F -X $LESS" # set search to smart-case, do not paginate if les
 ################################################################################
 # Tab Completion  #
 ################################################################################
+shopt -s direxpand
 bind "set show-all-if-ambiguous on"
 bind "TAB:menu-complete" 
 
