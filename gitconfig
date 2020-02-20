@@ -16,11 +16,19 @@
   cmb = "!f() { git fetch && git checkout -b $1 origin/core_master --no-track && git su; }; f"
   ccnb = "!f() { git fetch && git checkout -b $1 origin/cc_next --no-track && git su; }; f"
 
+# hub based aliases
+  my-prs = "!f() { unbuffer hub pr list --format='%au %pC%>(8)%i%Creset %t% l%n' | sed -n \"s/^$USER//p\"; }; f"
+  my-pr-status = "!f() { \
+    unbuffer hub pr list --format='%au %pC%>(8)%i (%B->%H) %Creset %t% l -- %sH%n' $@ | \
+    sed -n \"s/^$USER//p\" | \
+    awk '{ cmd=\"hub ci-status \" $NF; cmd | getline result; close(cmd); $NF=result; print }'; }; f"
+
 [push]
 	default = simple
 
 [core]
 	excludesfile = ~/.gitignore
+  preloadIndex = true
 	lintcheck = false
 	warningscheck = false
   
