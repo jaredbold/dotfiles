@@ -467,9 +467,9 @@ __git_ps1 ()
 	local p=""
   local timeout_short=""
   local timeout_long=""
-  if command -v timeout; then
-    timeout_short="$timeout 2s"
-    timeout_long="$timeout 4s"
+  if command -v timeout > /dev/null; then
+    timeout_short="timeout 2s"
+    timeout_long="timeout 4s"
   fi
 
 	if [ "true" = "$inside_gitdir" ]; then
