@@ -10,7 +10,7 @@
 	default = simple
 
 [core]
-	excludesFile = ~/.gitconfig/gitignore
+	excludesfile = ~/.gitconfig.d/gitignore
   
 [include]
   path = ~/.gitconfig.user
