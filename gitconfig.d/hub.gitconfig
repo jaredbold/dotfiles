@@ -1,0 +1,14 @@
+################################################################################
+# GitHub hub specific aliases
+# Author: Jared Bold
+################################################################################
+[alias]
+  # List pull requests opened by me
+  my-prs = "!f() { unbuffer hub pr list --format='%au %pC%>(8)%i%Creset %t% l%n' $@ | sed -n \"s/^$USER//p\"; }; f"
+
+  # List pull requests opened by me with their ci-status
+  my-pr-status = "!f() { \
+    unbuffer hub pr list --format='%au %pC%>(8)%i (%B->%H) %Creset %t% l -- %sH%n' $@ | \
+    sed -n \"s/^$USER//p\" | \
+    awk '{ cmd=\"hub ci-status \" $NF; cmd | getline result; close(cmd); $NF=result; print }'; }; f"
+
