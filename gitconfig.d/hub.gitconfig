@@ -8,7 +8,7 @@
 
   # List pull requests opened by me with their ci-status
   my-pr-status = "!f() { \
-    unbuffer hub pr list --format='%au %pC%>(8)%i (%B->%H) %Creset %t% l -- %sH%n' $@ | \
+    unbuffer hub pr list --format='%au %pC%>(8)%i (%H->%B) %Creset %t% l -- %sH%n' $@ | \
     sed -n \"s/^$USER//p\" | \
     awk '{ cmd=\"hub ci-status \" $NF; cmd | getline result; close(cmd); $NF=result; print }'; }; f"
 
