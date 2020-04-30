@@ -12,3 +12,7 @@
     sed -n \"s/^$USER//p\" | \
     awk '{ cmd=\"hub ci-status \" $NF; cmd | getline result; close(cmd); $NF=result; print }'; }; f"
 
+  # List pull requests with their ci-status
+  pr-status = "!f() { \
+    unbuffer hub pr list --format='%pC%>(8)%i (%H->%B) %Creset %t% l -- %sH%n' $@ | \
+    awk '{ cmd=\"hub ci-status \" $NF; cmd | getline result; close(cmd); $NF=result; print }'; }; f"
