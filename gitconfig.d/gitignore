@@ -1,2 +1,3 @@
 .rtx_syntastic_includes
 .*.swp
+.project.vimrc

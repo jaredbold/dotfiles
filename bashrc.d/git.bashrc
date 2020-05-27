@@ -9,8 +9,10 @@
 . ~/.git-completion.bash
 . ~/.git-prompt.sh
 . ~/.hub.bash_completion.sh
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
+#export GIT_PS1_SHOWDIRTYSTATE=0
+#export GIT_PS1_SHOWUNTRACKEDFILES=0
+unset GIT_PS1_SHOWDIRTYSTATE
+unset GIT_PS1_SHOWUNTRACKEDFILES
 export PS1='\u:\W$(__git_ps1 " (%s)")\$ '
 
 alias git_enable_tracking='export GIT_PS1_SHOWDIRTYSTATE=1 && export GIT_PS1_SHOWUNTRACKEDFILES=1;'
