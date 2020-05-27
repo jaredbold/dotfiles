@@ -4,6 +4,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%f
 
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
 let g:syntastic_cpp_remove_include_errors = 1
 let g:syntastic_cpp_compiler_options = '-O1 -std=c++11 -Wall -Wextra -Wundef -Wshadow -Wunreachable-code -Wunused-result'
 let g:syntastic_cpp_check_header = 1
