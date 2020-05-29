@@ -45,4 +45,4 @@
 	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
-	url = https://github.com/dense-analysis/ale.git
+	url = https://github.com/jaredbold/ale.git
