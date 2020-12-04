@@ -1,0 +1,68 @@
+PREFIX=$(HOME)
+
+ALL_FILES = $(wildcard *)
+BASHRC_FILES= $(wildcard *.bashrc)
+VIMRC_FILES= $(wildcard *.vim)
+EXCLUDED_FILES = Makefile bold_dotfiles $(BASHRC_FILES) $(VIMRC_FILES)
+
+FILTERED_FILES = $(filter-out $(EXCLUDED_FILES),$(ALL_FILES))
+DOT_FILES = $(addprefix $(PREFIX)/.,$(FILTERED_FILES))
+
+ifneq ($(BASHRC_FILES),)
+BASHRC_D_FILES =$(addprefix $(PREFIX)/.bashrc.d/,$(BASHRC_FILES))
+endif
+
+ifneq ($(VIMRC_FILES),)
+VIMRC_D_FILES =$(addprefix $(PREFIX)/.vimrc.d/,$(VIMRC_FILES))
+endif
+
+DIRS = $(PREFIX)
+
+ifneq ($(filter backup,$(MAKECMDGOALS)),)
+BACKUP_DIR=$(HOME)/backup
+INSTALLED_FILES=$(wildcard $(PREFIX)/.*)
+FILES_TO_BACKUP=$(filter $(addprefix $(PREFIX)/,$(notdir $(INSTALLED_FILES))),$(DOT_FILES))
+BACKUP_FILES=$(addprefix $(BACKUP_DIR)/,$(notdir $(FILES_TO_BACKUP)))
+DIRS += $(BACKUP_DIR)
+
+.PHONY : backup backup_inner 
+backup : backup_inner $(BACKUP_FILES)
+
+backup_inner :
+	cd bold_dotfiles && $(MAKE) backup
+
+$(BACKUP_DIR)/.% : $(PREFIX)/.% | $(BACKUP_DIR)
+	cp -r $< $@
+
+else
+.PHONY : install install_inner
+install : $(DOT_FILES) $(BASHRC_D_FILES) $(VIMRC_D_FILES)
+
+install_inner :
+	cd bold_dotfiles && $(MAKE) install
+
+$(PREFIX)/.% : $(PWD)/% $(PREFIX)
+	rm -rf $@
+	ln -sT $< $@
+
+$(PREFIX)/.bashrc.d/% : $(PWD)/% install_inner
+	rm -rf $@
+	ln -sT $< $@
+
+$(PREFIX)/.vimrc.d/% : $(PWD)/% install_inner
+	rm -rf $@
+	ln -sT $< $@
+endif
+
+$(addprefix $(PWD)/,$(ALL_FILES)) : 
+	true
+
+.PHONY : clean
+clean:
+	rm -rf $(DOT_FILES)
+	rm -rf $(BASHRC_D_FILES)
+	cd bold_dotfiles && $(MAKE) clean
+
+$(DIRS) :
+	mkdir $@
+
