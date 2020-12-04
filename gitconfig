@@ -13,6 +13,8 @@
 	excludesfile = ~/.gitconfig.d/gitignore
 	checkStat = minimal
 	untrackedCache = true
+	warningscheck = false
+	lintcheck = false
   
 [include]
   path = ~/.gitconfig.user
@@ -27,3 +29,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[advice]
+	detachedHead = false
+[diff "lfs"]
+	textconv = cat
+[pull]
+	rebase = false

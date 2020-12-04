@@ -9,6 +9,7 @@
 . ~/.git-completion.bash
 . ~/.git-prompt.sh
 . ~/.hub.bash_completion.sh
+eval "$(which gh 2>&1 > /dev/null && gh completion -s bash)"
 #export GIT_PS1_SHOWDIRTYSTATE=0
 #export GIT_PS1_SHOWUNTRACKEDFILES=0
 unset GIT_PS1_SHOWDIRTYSTATE

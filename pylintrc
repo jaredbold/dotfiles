@@ -1,2 +1,3 @@
 [MASTER]
-disable=missing-docstring
+disable = missing-docstring
+extension-pkg-whitelist=numpy, _pygit2
