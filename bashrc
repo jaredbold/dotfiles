@@ -7,6 +7,9 @@
 #   This is the minimal set of settings needed to have a working bash
 #   environment. This loads extra .bashrc files from ~/.bashrc.d directory
 ################################################################################
+# Bail out if not in an interactive shell
+[[ $- != *i* ]] && return
+
 OS=`uname`
 ################################################################################
 # Default Prompt  #
