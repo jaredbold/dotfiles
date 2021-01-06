@@ -13,8 +13,6 @@
 	excludesfile = ~/.gitconfig.d/gitignore
 	checkStat = minimal
 	untrackedCache = true
-	warningscheck = false
-	lintcheck = false
   
 [include]
   path = ~/.gitconfig.user
