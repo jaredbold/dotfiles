@@ -55,3 +55,6 @@
 [submodule "vim/bundle/cpsm"]
 	path = vim/bundle/cpsm
 	url = https://github.com/nixprime/cpsm.git
+[submodule "vim/bundle/oscyank.vim"]
+	path = vim/bundle/oscyank.vim
+	url = https://github.com/greymd/oscyank.vim.git
