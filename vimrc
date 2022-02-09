@@ -63,6 +63,8 @@ let g:load_doxygen_syntax=1
 " Commands
 " Filter
 command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile | put! a
+" Remove color codes
+command! -nargs=? NoColor execute '%s/\e\[[0-9;]*m//g'
 
 " Macros
 " Remove whitespace

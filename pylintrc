@@ -1,2 +1,7 @@
 [MASTER]
 disable = missing-docstring
+extension-pkg-whitelist=pyatl
+
+[TYPECHECK]
+generated-members=pyatl.*
+ignored-modules=pyatl

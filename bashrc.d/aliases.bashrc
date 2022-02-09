@@ -23,6 +23,9 @@ alias nw='(TMUX="" xterm &)'  # Opens a new terminal window
 
 alias cdg='cd `git top`'
 
+alias xclipp='xargs echo -n | xclip && echo "$(xclip -o)"'
+alias xclipc='xargs echo -n | xclip -sel clipboard && echo "$(xclip -o)"'
+
 ################################################################################
 # Vim #
 ################################################################################
@@ -31,6 +34,7 @@ alias vimr='vim -R'
 alias vimvs='vim -O'
 alias vimsp='vim -o'
 alias evimrc='vim ~/.vimrc'
+alias vimn='vim -U NONE -N'
 
 ################################################################################
 # ls  #
@@ -46,3 +50,14 @@ alias ll='ls -la'
 if [ $OS == "Linux" ]; then
   alias grep='grep --color=auto'
 fi
+
+################################################################################
+# functions  #
+################################################################################
+run_after() {
+  PID="$1"
+  shift
+  CMD="$*"
+  watch -g ps -opid -p "$PID"
+  $CMD
+}

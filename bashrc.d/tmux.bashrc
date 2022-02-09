@@ -12,11 +12,10 @@
 #			Aliases				      #
 ###############################################################
 alias tmux='tmux -2' # enables 256 color mode
-alias tt='tmux_title'
 
 ###############################################################
 #			Functions			      #
 ###############################################################
-function tmux_title() {
-  printf "\033k$1\033\\"  
+function workBranch() {
+  tmux rename-session $(pwd | sed "s|.*/\(dev[0-9]\).*|\1|")-$(git rev-parse --abbrev-ref HEAD | sed "s|HEAD||")
 }

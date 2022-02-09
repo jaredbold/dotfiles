@@ -25,3 +25,6 @@
 
   # Show commits I authored
   ml = "!me=$(git config --get user.name); git log --author \"$me\""
+
+  # detach and delete the current branch
+  dd = "!f() { git checkout --detach && git branch -D @{-1}; }; f"
