@@ -61,3 +61,9 @@
 [submodule "tmux-continuum"]
 	path = tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule "vim/bundle/ctrlp-py-matcher"]
+	path = vim/bundle/ctrlp-py-matcher
+	url = https://github.com/FelikZ/ctrlp-py-matcher.git
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
