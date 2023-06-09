@@ -1,2 +1,2 @@
 " Plugin to override ctrlp match function
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+" let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}

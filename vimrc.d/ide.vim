@@ -4,9 +4,11 @@ let g:ale_linters_explicit=1
 let g:ale_lint_on_insert_leave=1
 
 let g:ale_linters = {'python': ['flake8', 'pylint']}
+" let g:ale_fixers = {'python': ['black', 'isort']}
 let g:ale_fixers = {'python': ['black']}
 
 let g:ale_python_black_options='-t py36'
+let g:ale_python_isort_options='--profile black'
 
 " Jedi config
 " let g:jedi#auto_initialization = 1

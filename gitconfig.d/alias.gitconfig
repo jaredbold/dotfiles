@@ -11,12 +11,19 @@
 
   # Delete local branches that have been removed from the remote
   clean-branches = "!git fetch -p && for branch in $(git branch -vv | grep ': gone]' | gawk '{print $1}'); do git branch -d $branch; done"
+  clean-branches-D = "!git fetch -p && for branch in $(git branch -vv | grep ': gone]' | gawk '{print $1}'); do git branch -D $branch; done"
+
+  clean-branch = "!f() { git branch -d $1 && git push origin --delete $1}; }; f"
+  clean-branch-D = "!f() { git branch -D $1 && git push origin --delete $1}; }; f"
 
   # Show the closest tag that matches the provided pattern
   last-tag = "!f() { git describe --abbrev=0 --tags --match $@; }; f"
 
   # Rebase interactive
   rbi = "rebase -i"
+
+  # rebase against merge-base of current branch and remote
+  rbh = "!f() { git rebase -i $(git merge-base HEAD @{u}); }; f"
 
   # Print all local branches, ordered by last commit, with additional information
   ls-branches = "!git for-each-ref \
@@ -28,3 +35,4 @@
 
   # detach and delete the current branch
   dd = "!f() { git checkout --detach && git branch -D @{-1}; }; f"
+

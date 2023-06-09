@@ -25,6 +25,7 @@ alias cdg='cd `git top`'
 
 alias xclipp='xargs echo -n | xclip && echo "$(xclip -o)"'
 alias xclipc='xargs echo -n | xclip -sel clipboard && echo "$(xclip -o)"'
+alias ansi2text='sed -e "s/\x1b\[[0-9;]*m//g"'
 
 ################################################################################
 # Vim #

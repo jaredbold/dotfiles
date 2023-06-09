@@ -2,3 +2,4 @@
 *.swp
 .netrwhist
 *.log
+.gitconfig.d/work.gitconfig

@@ -18,6 +18,7 @@
   path = ~/.gitconfig.user
   path = ~/.gitconfig.d/alias.gitconfig
   path = ~/.gitconfig.d/hub.gitconfig
+  path = ~/.gitconfig.d/work.gitconfig
 
 [help]
 	autocorrect = 1
@@ -31,5 +32,5 @@
 	detachedHead = false
 [diff "lfs"]
 	textconv = cat
-[pull]
-	rebase = false
+[safe]
+	directory = *
