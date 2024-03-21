@@ -28,3 +28,8 @@ ggb() {
 ggib() {
   git grep -in "$1" | while IFS=: read i j k; do git blame -f -L $j,$j $i; done
 }
+
+gisort() {
+  FILES=$(git status --porcelain | cut -d' ' -f3)
+  isort $FILES
+}

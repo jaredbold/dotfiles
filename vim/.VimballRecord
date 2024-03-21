@@ -1,0 +1,1 @@
+LargeFile.vba: call delete('/mnt/harmonix_vol2/soporifix_vol3/user/home/jared/.vim/plugin/LargeFile.vim')|call delete('/mnt/harmonix_vol2/soporifix_vol3/user/home/jared/.vim/doc/LargeFile.txt')

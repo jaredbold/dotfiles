@@ -52,9 +52,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/bundle/cpsm"]
-	path = vim/bundle/cpsm
-	url = https://github.com/nixprime/cpsm.git
 [submodule "vim/bundle/oscyank.vim"]
 	path = vim/bundle/oscyank.vim
 	url = https://github.com/greymd/oscyank.vim.git
@@ -67,3 +64,6 @@
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/vim-oscyank"]
+	path = vim/bundle/vim-oscyank
+	url = https://github.com/ojroques/vim-oscyank.git

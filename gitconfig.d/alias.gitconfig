@@ -36,3 +36,5 @@
   # detach and delete the current branch
   dd = "!f() { git checkout --detach && git branch -D @{-1}; }; f"
 
+  # print the upstream branch
+  up = "name-rev @{u}"

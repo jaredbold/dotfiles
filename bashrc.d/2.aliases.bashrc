@@ -26,6 +26,7 @@ alias cdg='cd `git top`'
 alias xclipp='xargs echo -n | xclip && echo "$(xclip -o)"'
 alias xclipc='xargs echo -n | xclip -sel clipboard && echo "$(xclip -o)"'
 alias ansi2text='sed -e "s/\x1b\[[0-9;]*m//g"'
+alias cleanup='git dd && wb && git checkout . && git clean -ffd'
 
 ################################################################################
 # Vim #
@@ -61,4 +62,8 @@ run_after() {
   CMD="$*"
   watch -g ps -opid -p "$PID"
   $CMD
+}
+
+testing() {
+  git checkout -b $1_testing $1 && wb
 }
