@@ -1,3 +1,4 @@
 *
 !.gitignore
 !base16-shell
+!nvim
