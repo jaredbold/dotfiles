@@ -3,7 +3,7 @@
 	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "config/base16-shell"]
 	path = config/base16-shell
-	url = https://github.com/chriskempson/base16-shell.git
+	url = https://github.com/jaredbold/base16-shell.git
 [submodule "tmux-continuum"]
 	path = tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
