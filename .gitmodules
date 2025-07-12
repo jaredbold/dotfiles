@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-oscyank"]
 	path = vim/bundle/vim-oscyank
 	url = https://github.com/ojroques/vim-oscyank.git
+[submodule "vim/bundle/cpsm"]
+	path = vim/bundle/cpsm
+	url = https://github.com/nixprime/cpsm.git
