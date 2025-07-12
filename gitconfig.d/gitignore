@@ -1,3 +1,5 @@
 .rtx_syntastic_includes
 .*.swp
 .project.vimrc
+.mypy_cache/
+pyimport_local/
