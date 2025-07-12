@@ -1,72 +1,9 @@
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-indent-guides"]
-	path = vim/bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/vim-unimpaired"]
-	path = vim/bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "tmux-resurrect"]
 	path = tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "config/base16-shell"]
 	path = config/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule "vim/bundle/base16-vim"]
-	path = vim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
-[submodule "vim/bundle/vim-template"]
-	path = vim/bundle/vim-template
-	url = https://github.com/aperezdc/vim-template.git
-[submodule "vim/bundle/vim-addon-local-vimrc"]
-	path = vim/bundle/vim-addon-local-vimrc
-	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
-	url = https://github.com/dense-analysis/ale.git
-[submodule "vim/bundle/jedi-vim"]
-	path = vim/bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/bundle/oscyank.vim"]
-	path = vim/bundle/oscyank.vim
-	url = https://github.com/greymd/oscyank.vim.git
 [submodule "tmux-continuum"]
 	path = tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
-[submodule "vim/bundle/ctrlp-py-matcher"]
-	path = vim/bundle/ctrlp-py-matcher
-	url = https://github.com/FelikZ/ctrlp-py-matcher.git
-[submodule "vim/bundle/vim-commentary"]
-	path = vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/bundle/vim-oscyank"]
-	path = vim/bundle/vim-oscyank
-	url = https://github.com/ojroques/vim-oscyank.git
-[submodule "vim/bundle/cpsm"]
-	path = vim/bundle/cpsm
-	url = https://github.com/nixprime/cpsm.git
