@@ -7,19 +7,20 @@
 #   This is the minimal set of aliases needed to be comfortable
 ################################################################################
 # Some things are OS Depenedent so get that info first
-OS=`uname`
+OS=$(uname)
 
 ################################################################################
 # Shortcuts  #
 ################################################################################
 alias flw='shopt -s checkwinsize && resize > /dev/null 2>&1'
-alias l='less' 
+alias l='less'
 alias g='git'
 alias c='clear'
+alias cx='clear -x'
 alias :q='exit' # In case you are to used to working in vim
 
-alias tf='tail -f'    # Continues to dump file to stdout as it is written 
-alias nw='(TMUX="" xterm &)'  # Opens a new terminal window
+alias tf='tail -f'           # Continues to dump file to stdout as it is written
+alias nw='(TMUX="" xterm &)' # Opens a new terminal window
 
 alias cdg='cd `git top`'
 
@@ -62,8 +63,4 @@ run_after() {
   CMD="$*"
   watch -g ps -opid -p "$PID"
   $CMD
-}
-
-testing() {
-  git checkout -b $1_testing $1 && wb
 }
