@@ -10,7 +10,7 @@
 # Bail out if not in an interactive shell
 [[ $- != *i* ]] && return
 
-OS=`uname`
+OS=$(uname)
 ################################################################################
 # Default Prompt  #
 ################################################################################
@@ -23,7 +23,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 set -o vi       # input mode is vim
 stty erase '^?' # disable the bell, not sure this is needed
 if [ "$OS" == "Linux" ]; then
-  if xset q &> /dev/null; then
+  if xset q &>/dev/null; then
     xset b off
   fi
 fi
@@ -32,7 +32,11 @@ fi
 # Important exports #
 ################################################################################
 export LS_COLORS=$LS_COLORS:'ow=34;1:' # fix ls color outputs
-export EDITOR=vim
+if command -v nvim &>/dev/null; then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
 export LESS="-Ri -F -X $LESS" # set search to smart-case, do not paginate if less than a page
 
 ################################################################################
@@ -40,7 +44,7 @@ export LESS="-Ri -F -X $LESS" # set search to smart-case, do not paginate if les
 ################################################################################
 shopt | grep -q '^direxpand\b' && shopt -s direxpand
 bind "set show-all-if-ambiguous on"
-bind "TAB:menu-complete" 
+bind "TAB:menu-complete"
 
 ################################################################################
 # Important Aliases #
@@ -62,12 +66,13 @@ done
 # Fix PATH #
 #################################################################
 if [ -n "$PATH" ]; then
-  old_PATH=$PATH:; PATH=
+  old_PATH=$PATH:
+  PATH=
   while [ -n "$old_PATH" ]; do
-    x=${old_PATH%%:*}       # the first remaining entry
+    x=${old_PATH%%:*} # the first remaining entry
     case $PATH: in
-      *:"$x":*) ;;         # already there
-      *) PATH=$PATH:$x;;    # not there yet
+    *:"$x":*) ;;        # already there
+    *) PATH=$PATH:$x ;; # not there yet
     esac
     old_PATH=${old_PATH#*:}
   done
