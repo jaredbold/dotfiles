@@ -38,3 +38,9 @@
 
   # print the upstream branch
   up = "name-rev @{u}"
+
+  # list most recent local branches
+  lb = "!f() { git branch -l -v --sort=-committerdate --color=always | head; }; f"
+
+  # show head sha
+  head = "rev-parse HEAD"
